@@ -259,7 +259,10 @@ def main() -> int:
     print()
     for status, name, detail in results:
         mark = {OK: "  ok  ", WARN: " warn ", FAIL: " FAIL "}[status]
-        print(f"[{mark}] {name:<{width}} {detail}")
+        try:
+            print(f"[{mark}] {name:<{width}} {detail}")
+        except UnicodeEncodeError:
+            print(f"[{mark}] {name:<{width}} {detail.encode('ascii', 'replace').decode('ascii')}")
 
     fails = sum(1 for s, _, _ in results if s == FAIL)
     warns = sum(1 for s, _, _ in results if s == WARN)
