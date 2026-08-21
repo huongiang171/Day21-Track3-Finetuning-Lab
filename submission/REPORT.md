@@ -11,14 +11,14 @@
 
 | | |
 |---|---|
-| Dataset | `<tên + số mẫu>` (mặc định: 250 ticket CSKH → JSON triage) |
-| Train / val | `<n>` / `<n>` (seed 42) |
-| `max_length` | `<n>` — p95 đo được là `<n>` *(results/token_stats.json)* |
-| `MASK_MODE` | `<assistant-only | ...>` |
+| Dataset | `dataset mặc định (250 mẫu)` (mặc định: 250 ticket CSKH → JSON triage) |
+| Train / val | `225` / `25` (seed 42) |
+| `max_length` | `256` — p95 đo được là `98` *(results/token_stats.json)* |
+| `MASK_MODE` | `assistant-only` |
 | Epochs / max_steps | `<n>` |
 
-**Template có giữ khối `<think>` không?** `<có/không>` — *(results/template_check.json)*
-Nếu không: bạn đã xử lý thế nào?
+**Template có giữ khối `<think>` không?** `có` — *(results/template_check.json)*
+Nếu không: bạn đã xử lý thế nào? (Không áp dụng)
 
 ---
 
@@ -26,14 +26,16 @@ Nếu không: bạn đã xử lý thế nào?
 
 | | |
 |---|---|
-| `supervised_fraction` | `<0.xx>` |
-| Câu trả lời nằm trong loss | `<true>` |
-| Câu hỏi KHÔNG nằm trong loss | `<true>` |
+| `supervised_fraction` | `0.4149` |
+| Câu trả lời nằm trong loss | `true` |
+| Câu hỏi KHÔNG nằm trong loss | `true` |
 
 Dán 3–5 dòng đầu của đoạn được tính loss:
 
 ```
-<paste>
+</think>
+
+{"intent": "doi_tra", "urgency": "trung_binh", "product": "balo laptop", "sentiment": "trung_tinh"}<|im_end|>
 ```
 
 ---
