@@ -1,6 +1,6 @@
 # Lab 21 — Evaluation Report
 
-**Họ tên**: Huong Giang  **MSSV**: 171  **Ngày**: 2026-08-22
+**Họ tên**: Cao Hương Giang  **MSSV**: 2A202601420  **Ngày**: 2026-08-22
 **Tier**: `T4`  **Base model**: `Qwen3.5-4B`  **GPU thực tế**: `T4 16GB`
 
 > Mọi con số dưới đây phải khớp với file trong `results/`. Grader kiểm tra chéo.
